@@ -16,7 +16,6 @@ export const getFilteredTrips = ({trips, filters}) => {
   // TODO - filter by tags
   if(filters.tags.length > 0) {
     const filterTags = filters.tags;
-    console.log('filterTags: ', filterTags);
     for(let tag of filterTags) {
       output = output.filter(trip => trip.tags.includes(tag));
     }
