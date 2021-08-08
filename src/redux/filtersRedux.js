@@ -37,20 +37,21 @@ export default function reducer(statePart = [], action = {}) {
           ...statePart.duration,
           [action.payload.type]: parseInt(action.payload.value),
         },
-      }
+      };
     case ADD_TAG:
       return {
         ...statePart,
         tags: [...statePart.tags, action.payload],
-      }
-    case REMOVE_TAG:
+      };
+    case REMOVE_TAG: {
       const tags = [...statePart.tags];
       const index = tags.indexOf(action.payload);
       tags.splice(index, 1);
       return {
         ...statePart,
         tags,
-      }
+      };
+    }
     default:
       return statePart;
   }

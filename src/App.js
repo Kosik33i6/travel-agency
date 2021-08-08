@@ -50,7 +50,7 @@ class App extends React.Component {
         top: `${styles.top}px`,
       };
     }
-
+    console.log(red, setLocale);
     return (
       <BrowserRouter>
         <MainLayout>

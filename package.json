@@ -27,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/"
+    "lint": "eslint --fix src/"
   },
   "husky": {
     "hooks": {
@@ -54,5 +54,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
+    "stylelint": "^13.13.1",
+    "stylelint-scss": "^3.20.1"
   }
 }

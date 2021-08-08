@@ -6,6 +6,12 @@ import {Row, Col} from 'react-flexbox-grid';
 
 class TripListOptions extends React.Component {
 
+  static propTypes = {
+    addSearchingTag: PropTypes.func,
+    removeSearchingTag: PropTypes.func,
+    changeSearchDuration: PropTypes.func,
+  }
+
   handleTags(tag, checked){
     if(checked) {
       console.log('Adding tag', tag);
