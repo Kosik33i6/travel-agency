@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import pricing from '../../../data/pricing.json';
 // import styles from './OrderForm.module.scss';
 
-const OrderForm = ({tripCost, options}) => {
+const OrderForm = ({tripCost, options, setOrderOption}) => {
   console.log(pricing);
   return (
     <Row>
@@ -18,7 +18,11 @@ const OrderForm = ({tripCost, options}) => {
       </Col>
       {pricing.map(priceData => (
         <Col key={priceData.id} md={4}>
-          <OrderOption {...priceData}/>
+          <OrderOption
+            {...priceData}
+            currentValue={options[priceData.id]}
+            setOrderOption={setOrderOption}
+          />
         </Col>
       ))}
     </Row>
@@ -28,6 +32,7 @@ const OrderForm = ({tripCost, options}) => {
 OrderForm.propTypes = {
   tripCost: PropTypes.string,
   options: PropTypes.object,
+  setOrderOption: PropTypes.func,
 };
 
 export default OrderForm;
