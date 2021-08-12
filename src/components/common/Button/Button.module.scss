@@ -20,6 +20,7 @@
 
   &.danger {
     background: $color-primary;
+
     &:hover {
       background: darken($color-primary, 5%);
     }

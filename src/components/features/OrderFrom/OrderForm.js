@@ -7,7 +7,8 @@ import pricing from '../../../data/pricing.json';
 // import styles from './OrderForm.module.scss';
 
 const OrderForm = ({tripCost, options, setOrderOption}) => {
-  console.log(pricing);
+  console.log('OrderForm pricing: ', pricing);
+  console.log('OrderForm options: ', options);
   return (
     <Row>
       <Col xs={12}>
