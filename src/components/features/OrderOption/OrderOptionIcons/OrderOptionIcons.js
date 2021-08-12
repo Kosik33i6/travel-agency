@@ -9,6 +9,12 @@ const OrderOptionIcons = ({values, required, currentValue, setOptionValue}) => {
   console.log('OrderOptionIcons-------------', 'required: ', required, 'values: ', values, 'currentvalue: ', currentValue);
   return (
     <div>
+      {required ? '' : (
+        <div onClick={() => setOptionValue('')}>
+          <Icon name='times-circle'/>
+          <div>none</div>
+        </div>
+      )}
       {values.map(value => (
         <div
           key={value.id}
