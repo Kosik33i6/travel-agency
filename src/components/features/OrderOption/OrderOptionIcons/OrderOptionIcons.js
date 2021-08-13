@@ -1,14 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
+// import {useState} from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../../../common/Icon/Icon';
 import {formatPrice} from '../../../../utils/formatPrice';
 import styles from '../OrderOption.module.scss';
 
-const OrderOptionIcons = ({values, required, currentValue, setOptionValue}) => {
-  console.log('OrderOptionIcons-------------', 'required: ', required, 'values: ', values, 'currentvalue: ', currentValue);
-
-  const [isActive, setIsActive] = useState(false);
-
+const OrderOptionIcons = ({values, required, setOptionValue}) => {
   return (
     <div>
       {required ? '' : (
@@ -20,11 +17,8 @@ const OrderOptionIcons = ({values, required, currentValue, setOptionValue}) => {
       {values.map(value => (
         <div
           key={value.id}
-          className={isActive ? styles.iconActive : styles.icon}
-          onClick={() => {
-            setOptionValue(value.id);
-            setIsActive(!isActive);
-          }}
+          className={styles.icon}
+          onClick={() => setOptionValue(value.id)}
         >
           <Icon name={value.icon}/>
           <div>{value.name}</div>
