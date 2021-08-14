@@ -6,6 +6,10 @@ import {formatPrice} from '../../../../utils/formatPrice';
 import styles from '../OrderOption.module.scss';
 
 const OrderOptionIcons = ({values, required, setOptionValue}) => {
+  // console.log('OrderOptionIcons-------------', 'required: ', required, 'values: ', values, 'currentvalue: ', currentValue);
+
+  // const [isActive, setIsActive] = useState(false);
+
   return (
     <div>
       {required ? '' : (
@@ -18,6 +22,11 @@ const OrderOptionIcons = ({values, required, setOptionValue}) => {
         <div
           key={value.id}
           className={styles.icon}
+          // ? className={isActive ? styles.iconActive : styles.icon}
+          /*  onClick={() => {
+             setOptionValue(value.id);
+            setIsActive(!isActive);
+           }} */
           onClick={() => setOptionValue(value.id)}
         >
           <Icon name={value.icon}/>
