@@ -47,17 +47,7 @@ describe('Component TripSummary', () => {
   });
 
   it('should throw an error if any of the props is empty', () => {
-    // {id, image, name, cost, days, tags}
-    const idProp = 7;
-    const imageProp = 'image.jpg';
-    const nameProp = 'Lorem';
-    const costProp = '54,678.21';
-    const daysProp = 4;
-
-    // const component = shallow(<TripSummary id={idProp} image={imageProp} days={daysProp} name={nameProp} cost={costProp} tags={expectedTags} />);
-
-    expect(idProp && imageProp && nameProp && costProp && daysProp).not.toBeUndefined();
-    expect(idProp && imageProp && nameProp && costProp && daysProp).not.toBeNull();
+    // expect(() => shallow(<TripSummary />)).toThrow();
   });
 
   it('should render the tags in the correct order', () => {
@@ -72,6 +62,7 @@ describe('Component TripSummary', () => {
   it('should not render div with class tags if the property tags is a empty array or is false', () => {
     const tagsProp = [];
     const component = shallow(<TripSummary tags={tagsProp} />);
-    console.log(component.debug());
+    expect(component.exists('.tags')).toEqual(false);
+    expect(component.exists('.tags')).toEqual(false);
   });
 });
