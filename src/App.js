@@ -19,10 +19,6 @@ import parseTrips from './utils/parseTrips';
 import {setMultipleStates} from './redux/globalRedux';
 import {AnimatedSwitch} from 'react-router-transition';
 import './App.scss';
-
-import { red } from 'jest-matcher-utils/node_modules/chalk';
-import { setLocale } from 'yup';
-
 class App extends React.Component {
   static propTypes = {
     trips: PropTypes.array,
@@ -50,7 +46,6 @@ class App extends React.Component {
         top: `${styles.top}px`,
       };
     }
-    console.log(red, setLocale);
     return (
       <BrowserRouter>
         <MainLayout>
